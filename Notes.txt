@@ -1,0 +1,40 @@
+HTML Semantic Markup
+{
+    i.e. meaningful markup, or markup thats meaningful to the content of that document
+    - kind of like having good naming convention or type names 
+    - e.g. <main>, <section> <header> <nav>
+}
+
+HTML 
+{
+    Block vs. Inline Elements:
+        - Block level takes its own line like a <p></p>
+        - Inline Elements share the space, like a <a> or <img>
+
+    <div>
+        - a block level generic container to group elements together
+        - useful for using css on al the same stuff. css applied to the same group
+            determined by the class in the div
+            <div class=something></div>
+            Then the css can refer to .something{}
+        
+    <span>
+        - an inline generic container
+        - used to wrap around specific things in line to change them with css
+        - like some words in a sentence which are changed a little bit
+
+    <hr>
+        - no closing tab
+        - just a horizontal line across the page
+        - it can be styled
+    
+    <br> 
+        - break, basically a carriage return
+
+    <sup> , <sub>
+        - superscript and subscript (does have closing tags)
+    
+    Entity Codes:
+        - All start with & and end with ;
+        - some symbols coorespond to some text inside those 
+}
