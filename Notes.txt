@@ -2,7 +2,8 @@ HTML Semantic Markup
 {
     i.e. meaningful markup, or markup thats meaningful to the content of that document
     - kind of like having good naming convention or type names 
-    - e.g. <main>, <section> <header> <nav>
+    - e.g. <main>, <section> <header> <nav> <footer> <summary> <details>
+    - good for giving meaning to markup, also for screen readers
 }
 
 HTML 
