@@ -1,3 +1,13 @@
+
+HTML Tables
+{
+    Display rows and columns of data 
+    TD: table data -> a single cell of data
+    TR: table row
+    TH: table heading
+    
+}
+
 HTML Semantic Markup
 {
     i.e. meaningful markup, or markup thats meaningful to the content of that document
