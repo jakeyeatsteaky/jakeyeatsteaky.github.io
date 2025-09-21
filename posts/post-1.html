@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello World — My Vanilla Site</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="../index.html">My Vanilla Site</a>
+      <nav class="nav">
+        <a href="../index.html">Home</a>
+        <a href="../about.html">About</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
+    </div>
+  </header>
+
+  <main class="container prose">
+    <article>
+      <h1>Hello World</h1>
+      <p class="meta">Published <time datetime="2025-09-21">Sep 21, 2025</time></p>
+      <p>This is a sample post. Write posts as standalone HTML files in <code>posts/</code>, or copy this file and edit.</p>
+      <h2>Code sample</h2>
+      <pre><code>// vanilla js
+document.querySelectorAll('pre code').forEach(el => {
+  // add your own syntax highlighting later if you want
+});</code></pre>
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Your Name.</small>
+    </div>
+  </footer>
+  <script src="../assets/script.js"></script>
+</body>
+</html>

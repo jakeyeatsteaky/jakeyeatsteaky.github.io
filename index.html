@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Vanilla Site</title>
+  <meta name="description" content="A tiny, fast, no-build static site.">
+  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="icon" href="data:,">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a class="brand" href="index.html">My Vanilla Site</a>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="posts/post-1.html">First Post</a>
+      </nav>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="hero">
+      <h1>Welcome 👋</h1>
+      <p>This is a dead-simple, no-build static site using just HTML, CSS, and a dash of JS.</p>
+      <p>Edit <code>index.html</code>, tweak <code>assets/styles.css</code>, and add pages in the <code>posts/</code> folder.</p>
+    </section>
+
+    <section class="cards">
+      <article class="card">
+        <h2><a href="posts/post-1.html">Hello World Post</a></h2>
+        <p>A tiny example blog post to get you started.</p>
+        <p class="meta">Published <time datetime="2025-09-21">Sep 21, 2025</time></p>
+      </article>
+
+      <article class="card">
+        <h2><a href="about.html">About this site</a></h2>
+        <p>How to edit and deploy this site in minutes.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Your Name. Built with vanilla HTML/CSS/JS.</small>
+    </div>
+  </footer>
+
+  <script src="assets/script.js"></script>
+</body>
+</html>

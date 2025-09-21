@@ -1,0 +1,52 @@
+:root{
+  --bg: #0b0c10;
+  --bg-elev: #12141a;
+  --text: #e5e7eb;
+  --muted: #9ca3af;
+  --accent: #60a5fa;
+  --card: #0f1117;
+  --border: #1f2937;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height:1.6;
+}
+
+.container{max-width:960px;margin:0 auto;padding:1rem}
+.site-header, .site-footer{background: var(--bg-elev); border-bottom:1px solid var(--border)}
+.site-footer{border-top:1px solid var(--border); border-bottom:none}
+
+.brand{font-weight:700; text-decoration:none; color:var(--text)}
+.nav a{color:var(--muted); text-decoration:none; margin-left:1rem}
+.nav a:hover, .nav a.active{color:var(--text)}
+
+.site-header .container{display:flex; align-items:center; gap:1rem}
+.site-header .nav{margin-left:auto}
+
+.theme-toggle{background:transparent;border:1px solid var(--border);color:var(--text);padding:.4rem .6rem;border-radius:.5rem;cursor:pointer}
+.theme-toggle:hover{border-color:var(--accent)}
+
+.hero{padding:2rem 0}
+.cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
+.card{background:var(--card); border:1px solid var(--border); border-radius:12px; padding:1rem}
+.card h2{margin-top:0}
+.card a{color:var(--accent); text-decoration:none}
+.card a:hover{text-decoration:underline}
+.meta{color:var(--muted); font-size:.9rem}
+
+.prose h1,.prose h2,.prose h3{line-height:1.25}
+.prose h1{font-size:2rem; margin:.5rem 0 1rem}
+.prose h2{font-size:1.4rem; margin:1.5rem 0 .5rem}
+.prose p{margin:.6rem 0}
+pre{background:#0b0f19; padding:1rem; overflow:auto; border-radius:8px; border:1px solid var(--border)}
+code{font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, monospace}
+a{color:var(--accent)}
+a:hover{text-decoration:underline}
+
+/* Light theme */
+.light{--bg:#ffffff; --bg-elev:#f8fafc; --text:#0f172a; --muted:#475569; --accent:#2563eb; --card:#ffffff; --border:#e5e7eb}
