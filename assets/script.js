@@ -1,4 +1,3 @@
-// Tiny enhancements: year stamp + dark/light theme toggle with localStorage
 (function(){
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

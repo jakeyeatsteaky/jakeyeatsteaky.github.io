@@ -17,6 +17,8 @@ body{
   line-height:1.6;
 }
 
+
+
 .container{max-width:960px;margin:0 auto;padding:1rem}
 .site-header, .site-footer{background: var(--bg-elev); border-bottom:1px solid var(--border)}
 .site-footer{border-top:1px solid var(--border); border-bottom:none}
@@ -30,6 +32,10 @@ body{
 
 .theme-toggle{background:transparent;border:1px solid var(--border);color:var(--text);padding:.4rem .6rem;border-radius:.5rem;cursor:pointer}
 .theme-toggle:hover{border-color:var(--accent)}
+.theme-icon {
+  width: 20px;
+  height: auto;
+}
 
 .hero{padding:2rem 0}
 .cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:1rem}
