@@ -1,0 +1,142 @@
+/* generated through chatgpt prompt gpt5.2  */
+:root {
+  /* surfaces */
+  --bg: #121313;          
+  --bg-elev: #1a1b1c;    
+  --card: #171819;
+
+  /* text */
+  --text: #e8e6e2;      
+  --muted: #a3a09a;     
+
+  /* accents */
+  --accent: #7fb6e6;     
+  --accent-green: #7fae97; 
+
+  --border: #2a2c2e;
+}
+
+.light {
+  /* surfaces */
+  --bg: #f6f3ee;         
+  --bg-elev: #faf9f6;
+  --card: #ffffff;
+
+  /* text */
+  --text: #23221f;      
+  --muted: #6f6c66;     
+
+  /* accents */
+  --accent: #5fa0d8;    
+  --accent-green: #6f9f88;
+
+  --border: #dedad3;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+
+body {
+  font-family: "IBM Plex Sans", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.55;
+  letter-spacing: -0.01em;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 1rem; }
+
+.site-header,
+.site-footer {
+  background: var(--bg-elev);
+  border-bottom: 1px solid var(--border);
+}
+
+.theme-toggle {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  margin-left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+.theme-icon {
+  pointer-events: none;
+  width: 20px;
+  height: auto;
+}
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  border-bottom: none;
+}
+
+.brand {
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-size: 0.8rem;
+  color: var(--text);
+  text-decoration: none;
+}
+
+.nav a {
+  color: var(--muted);
+  text-decoration: none;
+  margin-left: 1.2rem;
+  font-size: 0.85rem;
+}
+
+.nav a:hover,
+.nav a.active { color: var(--accent); }
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+}
+
+.site-header .nav { margin-left: auto; }
+
+.hero { padding: 2rem 0; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.1rem;
+}
+
+.card a {
+  color: var(--accent-green);
+  text-decoration: none;
+}
+
+.meta { color: var(--muted); font-size: 0.85rem; }
+
+.prose h1 { font-size: 1.9rem; margin: 0.5rem 0 1rem; }
+.prose h2 { font-size: 1.3rem; margin: 1.4rem 0 0.4rem; }
+.prose p { margin: 0.6rem 0; }
+
+pre {
+  background: rgba(0,0,0,0.35);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.light pre {
+  background: #f0ede7;
+}
+
+a { color: var(--accent); }

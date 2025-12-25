@@ -4,19 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello World — My Vanilla Site</title>
-  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../src/styles.css">
 </head>
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="../index.html">My Vanilla Site</a>
-      <nav class="nav">
-        <a href="../index.html">Home</a>
-        <a href="../about.html">About</a>
-      </nav>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">🌓</button>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <main class="container prose">
     <article>
@@ -30,6 +21,6 @@
       <small>© <span id="year"></span> Jake Baker.</small>
     </div>
   </footer>
-  <script src="../assets/script.js"></script>
+  <script type="module" src="../src/script.js"></script>
 </body>
 </html>

@@ -6,37 +6,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>[[maybe_unused]]</title>
   <meta name="description" content="Just a place for Jake to keep his (organized) thoughts">
-  <link rel="stylesheet" href="assets/styles.css">
+  <link rel="stylesheet" href="src/styles.css">
   <link rel="icon" href="data:,">
 </head>
 
 <body>
-  <header class="site-header">
-    <div class="container">
-      <a class="brand" href="index.html">Please take off your shoes before entering</a>
-      <nav class="nav">
-        <a href="index.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="posts/posts-aggregate.html">Ideas</a>
-      </nav>
-      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
-        <img src="images/test.png" alt="" class="theme-icon" />
-      </button>
-    </div>
-  </header>
+  <div id="site-header"></div>
 
   <main class="container">
-    <section class="hero">
+    <!-- <section class="hero">
       <h1>Please Excuse the Mess</h1>
       <p>Eventually, I think this will be a valuable place to store my thoughts, musings, and where I can highlight some
         of the things I enjoy doing.</p>
       <p>Please excuse the mess while I figure out what those are.</p>
-    </section>
+    </section> -->
 
     <section class="cards">
       <article class="card">
-        <h2><a href="posts/post-1.html">Hello World</a></h2>
-        <p>Step 1: Publish.</p>
+        <h2><a href="posts/post-1.html">{Hello World}</a></h2>
+        <p>Step 1: Publish <span id="month"></span> <span id="year"></span></p>
         <p class="meta">Published <time datetime="2025-09-21">Sep 21, 2025</time></p>
       </article>
 
@@ -53,7 +41,7 @@
     </div>
   </footer>
 
-  <script src="assets/script.js"></script>
+  <script type="module" src="src/script.js"></script>
 </body>
 
 </html>
