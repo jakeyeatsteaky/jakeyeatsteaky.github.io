@@ -3,8 +3,6 @@ name: Deploy Pages
 on:
   push:
     branches: [main]
-    paths-ignore:
-      - 'unpublished/**'
   workflow_dispatch:
 
 permissions:
@@ -13,11 +11,38 @@ permissions:
   id-token: write
 
 jobs:
+  changes:
+    runs-on: ubuntu-latest
+    outputs:
+      should_deploy: ${{ steps.diff.outputs.should_deploy }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - id: diff
+        shell: bash
+        run: |
+          CHANGED="$(git diff --name-only ${{ github.event.before }} ${{ github.sha }})"
+          echo "$CHANGED"
+
+          SHOULD_DEPLOY="false"
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            if [[ "$f" != unpublished/* ]]; then
+              SHOULD_DEPLOY="true"
+              break
+            fi
+          done <<< "$CHANGED"
+
+          echo "should_deploy=$SHOULD_DEPLOY" >> "$GITHUB_OUTPUT"
+
   deploy:
+    needs: changes
+    if: needs.changes.outputs.should_deploy == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
-
     steps:
       - uses: actions/checkout@v4
 
