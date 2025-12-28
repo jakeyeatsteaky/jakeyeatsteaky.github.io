@@ -20,11 +20,11 @@ const fetchHeader = () => {
   const HEADER_HTML = `
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="index.html">Please take off your shoes before entering</a>
+    <a class="brand" href="/index.html">Please take off your shoes before entering</a>
     <nav class="nav">
-      <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="posts/posts-aggregate.html">Ideas</a>
+      <a href="/index.html">Home</a>
+      <a href="/about.html">About</a>
+      <a href="/posts/posts-aggregate.html">Ideas</a>
     </nav>
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
       <img src="/images/test.png" alt="" class="theme-icon" />
@@ -32,6 +32,14 @@ const fetchHeader = () => {
   </div>
 </header>
 `;
+
+  const FOOTER_HTML = `  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Jake Baker.</small>
+    </div>
+  </footer>`;
+
+  document.getElementById("site-footer").innerHTML = FOOTER_HTML;
   document.getElementById("site-header").innerHTML = HEADER_HTML;
 })();
 

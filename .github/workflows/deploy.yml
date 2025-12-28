@@ -1,0 +1,29 @@
+name: Deploy Pages
+
+on:
+  push:
+    branches: [main]
+    paths-ignore:
+      - 'unpublished/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build site
+        run: |
+          npm ci
+          npm run build
+        
+      - name: Deploy
+        uses: actions/deploy-pages@v4
