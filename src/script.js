@@ -62,3 +62,13 @@ const fetchHeader = () => {
   }
 })();
 
+const func = () => {
+  const btn = document.getElementById('some-section');
+  btn.addEventListener('click', () => {
+    console.log("you've clicked it");
+  });
+}
+func();
+
+
+
