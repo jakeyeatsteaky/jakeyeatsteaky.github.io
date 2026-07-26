@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal</title>
+  <meta name="description" content="Private notes by Jake Baker">
+  <link rel="stylesheet" href="src/styles.css">
+  <link rel="icon" href="data:,">
+</head>
+
+<body>
+  <div id="site-header"></div>
+
+  <main class="container prose">
+    <section class="password-panel" data-personal-gate>
+      <h1>Personal</h1>
+      <p class="meta">This page is hidden by a lightweight static-site password gate.</p>
+      <form class="password-form" data-password-form>
+        <label for="personal-password">Password</label>
+        <div class="password-row">
+          <input id="personal-password" name="password" type="password" autocomplete="current-password" required>
+          <button type="submit">Enter</button>
+        </div>
+        <p class="form-message" data-password-message aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="personal-content" data-personal-content hidden>
+      <h1>Personal</h1>
+      <p>
+        This is the private side of the site. Add personal writing here only if you are comfortable
+        with the limits of static-site password protection.
+      </p>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script type="module" src="src/script.js"></script>
+</body>
+
+</html>

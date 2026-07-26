@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>[[maybe_unused]]</title>
+  <title>Jake Baker</title>
   <meta name="description" content="Just a place for Jake to keep his (organized) thoughts">
   <link rel="stylesheet" href="src/styles.css">
   <link rel="icon" href="data:,">
@@ -13,36 +13,41 @@
 <body>
   <div id="site-header"></div>
 
-  <main class="container">
-    <!-- <section class="hero">
-      <h1>Please Excuse the Mess</h1>
-      <p>Eventually, I think this will be a valuable place to store my thoughts, musings, and where I can highlight some
-        of the things I enjoy doing.</p>
-      <p>Please excuse the mess while I figure out what those are.</p>
-    </section> -->
+  <main class="container home">
+    <figure class="mountain-header">
+      <img src="images/rocky-mountain-pixel-header.jpg" alt="Pixel art of mountains with a red sun and retro horizon stripes">
+    </figure>
 
-    <section class="cards">
-      <article class="card">
-        <h2><a href="posts/post-1.html">{Hello World}</a></h2>
-        <p>Step 1: Publish <span id="month"></span> <span id="year"></span></p>
-        <p class="meta">Published <time datetime="2025-09-21">Sep 21, 2025</time></p>
-      </article>
+    <section id="about" class="home-section">
+      <h1>Jake Baker</h1>
+      <p>
+        I am a software developer who likes building useful things, writing through ideas,
+        and keeping a quiet corner of the internet for notes that are still becoming something.
+      </p>
+    </section>
 
-      <article class="card">
-        <h2><a href="about.html">About this site</a></h2>
-        <p>Maybe links to my github and other hobbies here.</p>
-      </article>
+    <section id="writing" class="home-section">
+      <h2>Writing</h2>
+      <ol class="post-list">
+        <li>
+          <a href="posts/post-1.html">Hello World</a>
+          <time datetime="2025-09-21">Sep 21, 2025</time>
+        </li>
+        <li>
+          <a href="posts/post-2.html">Test test</a>
+          <time datetime="2025-10-03">Oct 3, 2025</time>
+        </li>
+      </ol>
+    </section>
 
-      <article class="card">
-        <h2><a href="til/test.html">TIL About X</a></h2>
-        <p>Summarizing what I've learned</p>
-      </article>
+    <section id="personal" class="home-section">
+      <h2>Personal</h2>
+      <p>Private notes live behind a password gate.</p>
+      <p><a href="personal.html">Open personal</a></p>
     </section>
   </main>
 
   <div id="site-footer"></div>
-
-  <div id="some-section">This is a section</div>
 
   <script type="module" src="src/script.js"></script>
 </body>

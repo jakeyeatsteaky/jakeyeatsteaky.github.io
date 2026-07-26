@@ -29,7 +29,7 @@ jobs:
           SHOULD_DEPLOY="false"
           while IFS= read -r f; do
             [ -z "$f" ] && continue
-            if [[ "$f" != unpublished/* ]]; then
+            if [[ "$f" == index.html || "$f" == about.html || "$f" == writing.html || "$f" == personal.html || "$f" == images/* || "$f" == posts/* || "$f" == src/* || "$f" == .github/workflows/deploy.yml ]]; then
               SHOULD_DEPLOY="true"
               break
             fi
@@ -46,8 +46,14 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Stage public site files
+        run: |
+          mkdir _site
+          cp index.html about.html writing.html personal.html _site/
+          cp -R images posts src _site/
+
       - uses: actions/upload-pages-artifact@v3
         with:
-          path: .
+          path: _site
 
       - uses: actions/deploy-pages@v4

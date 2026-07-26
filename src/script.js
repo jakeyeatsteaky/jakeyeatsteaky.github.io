@@ -1,30 +1,13 @@
 
-import { month_ } from './utils.js';
-
-// js doesn't know file structure items from an IO perspective, so this is how
-// you would have to fetch the data from that file (as a network request)
-const fetchHeader = () => {
-  fetch("/partials/header.html")
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById("site-header").innerHTML = html;
-    });
-}
-//fetchHeader();
-
-
-
-// you could also store as a var (just copied from that file)
-// and assign it this way. but i guess this would be less maintainable
 (function() {
   const HEADER_HTML = `
 <header class="site-header">
   <div class="container">
-    <a class="brand" href="/index.html">Please take off your shoes before entering</a>
+    <a class="brand" href="/index.html">Jake Baker</a>
     <nav class="nav">
-      <a href="/index.html">Home</a>
-      <a href="/about.html">About</a>
-      <a href="/posts/posts-aggregate.html">Ideas</a>
+      <a href="/index.html#about">About</a>
+      <a href="/writing.html">Writing</a>
+      <a href="/personal.html">Personal</a>
     </nav>
     <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
       <img src="/images/test.png" alt="" class="theme-icon" />
@@ -46,8 +29,6 @@ const fetchHeader = () => {
 (function(){
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
-  const monthEl = document.getElementById('month');
-  if (monthEl) monthEl.textContent = month_(new Date().getMonth());
 
   const root = document.documentElement;
   const saved = localStorage.getItem('theme');
@@ -62,13 +43,43 @@ const fetchHeader = () => {
   }
 })();
 
-const func = () => {
-  const btn = document.getElementById('some-section');
-  btn.addEventListener('click', () => {
-    console.log("you've clicked it");
+const hashText = async (value) => {
+  const encoded = new TextEncoder().encode(value);
+  const digest = await crypto.subtle.digest('SHA-256', encoded);
+  return [...new Uint8Array(digest)]
+    .map(byte => byte.toString(16).padStart(2, '0'))
+    .join('');
+};
+
+(function(){
+  const gate = document.querySelector('[data-personal-gate]');
+  const content = document.querySelector('[data-personal-content]');
+  const form = document.querySelector('[data-password-form]');
+  const message = document.querySelector('[data-password-message]');
+
+  if (!gate || !content || !form) return;
+
+  const unlock = () => {
+    gate.hidden = true;
+    content.hidden = false;
+    sessionStorage.setItem('personalUnlocked', 'true');
+  };
+
+  if (sessionStorage.getItem('personalUnlocked') === 'true') {
+    unlock();
+    return;
+  }
+
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    const formData = new FormData(form);
+    const password = String(formData.get('password') || '');
+    const expectedHash = '67bf836dbaa495cc8008b261bc76f8666fa4d7171c4909df737dec82914d4ac1';
+
+    if (await hashText(password) === expectedHash) {
+      unlock();
+    } else if (message) {
+      message.textContent = 'Nope.';
+    }
   });
-}
-func();
-
-
-
+})();
