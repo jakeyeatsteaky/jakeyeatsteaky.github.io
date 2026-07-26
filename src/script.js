@@ -5,7 +5,7 @@
   <div class="container">
     <a class="brand" href="/index.html">Jake Baker</a>
     <nav class="nav">
-      <a href="/index.html#about">About</a>
+      <a href="/about.html">About</a>
       <a href="/writing.html">Writing</a>
       <a href="/personal.html">Personal</a>
     </nav>
